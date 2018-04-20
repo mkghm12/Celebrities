@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+<div class="container">
+    <h1 class="text-center">Add new Award <%= celebrity.name%></h1>
+    <div style="width: 30%;margin:0 auto">
+        <form action='/celebrity/<%= celebrity._id %>/comments' method="POST">
+            <div class="form-group">
+                <label for="text">Text</label>
+                <input class="form-control" type="text" placeholder="text" name="comment[text]">
+            </div>
+            <button class="btn btn-lg btn-block btn-primary" type="submit">submit</button>
+        </form>
+        <a class="text-center" href="/celebrity">go back</a>
+    </div>
+
+</div>
+
+
+<% include ../partials/footer%>

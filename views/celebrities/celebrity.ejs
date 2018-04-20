@@ -1,0 +1,28 @@
+<% include ../partials/header%>
+<div class="container">
+    <div class="jumbotron">
+        <h1>Welcome to Most Popular Celebrity Page</h1>
+        <a class="btn btn-primary btn-large" href="/celebrity/new">Create new Celebrity info</a>
+    </div>
+    <div class="row text-center" style="display: flex;flex-wrap: wrap">
+        <% celebrities.forEach(function (celebrity) { %>
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <a href="/celebrity/<%= celebrity._id %>">
+                    <img src="<%= celebrity.image%>" alt="">
+                </a>
+                <div class="caption">
+                    <h4><%=celebrity.name %></h4>
+                </div>
+                <div id="button">
+                    <a  class="btn btn-primary" href="/celebrity/<%= celebrity._id %>">
+                        More info
+                    </a>
+                </div>
+            </div>
+        </div>
+        <% })%>
+    </div>
+</div>
+
+<% include ../partials/footer %>
