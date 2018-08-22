@@ -60,9 +60,6 @@ router.get('/:id/edit',function (req,res) {
 });
 
 router.put('/:id',function (req,res) {
-
-        // Yes, it's a valid ObjectId, proceed with `findById` call.
-        // console.log("error is not here \n");
         Celebrity.findById(req.params.id,function (err,editedCelebrity) {
             if(err){
                 res.redirect('/celebrity');
